@@ -17,5 +17,11 @@ export default function labs() {
            Lab 3: JavaScript Fundamentals </Link>
        </li>
      </ul>
+     <h2>
+      Other Info
+     </h2>
+     Name: Ryan Fahey
+     <br></br>
+     GitHub: <Link href="https://github.com/Ryan5453/kanbas-next-js">github.com/Ryan5453/kanbas-next-js</Link>
    </div>
 );}
