@@ -1,36 +1,32 @@
 "use client";
 import { Form, Button, Row, Col, Card } from "react-bootstrap";
+import Link from "next/link";
+import { useParams } from "next/navigation";
+import * as db from "../../../../database";
 
 export default function AssignmentEditor() {
+  const { cid, aid } = useParams();
+  const assignments = db.assignments;
+  const assignment = assignments.find((a: any) => a._id === aid);
   return (
     <div id="wd-assignments-editor">
       <Form>
         {/* Assignment Name */}
         <Form.Group className="mb-3">
           <Form.Label>Assignment Name</Form.Label>
-          <Form.Control 
-            id="wd-name" 
-            defaultValue="A1" 
+          <Form.Control
+            id="wd-name"
+            defaultValue={assignment?.title || ""}
           />
         </Form.Group>
 
         {/* Description */}
         <Form.Group className="mb-3">
-          <Form.Control 
-            as="textarea" 
+          <Form.Control
+            as="textarea"
             rows={8}
             id="wd-description"
-            defaultValue={`The assignment is available online
-
-Submit a link to the landing page of your Web application running on Netlify.
-
-The landing page should include the following:
-• Your full name and section
-• Links to each of the lab assignments
-• Link to the Kambaz application
-• Links to all relevant source code repositories
-
-The Kambaz application should include a link to navigate back to the landing page.`}
+            defaultValue={assignment?.description || ""}
           />
         </Form.Group>
 
@@ -38,7 +34,7 @@ The Kambaz application should include a link to navigate back to the landing pag
         <Form.Group as={Row} className="mb-3">
           <Form.Label column sm={2} className="text-end">Points</Form.Label>
           <Col sm={10}>
-            <Form.Control id="wd-points" type="number" defaultValue={100} />
+            <Form.Control id="wd-points" type="number" defaultValue={assignment?.points || 100} />
           </Col>
         </Form.Group>
 
@@ -81,36 +77,11 @@ The Kambaz application should include a link to navigate back to the landing pag
                 </Form.Select>
 
                 <Form.Label className="fw-bold">Online Entry Options</Form.Label>
-                <Form.Check 
-                  type="checkbox" 
-                  id="wd-text-entry" 
-                  label="Text Entry" 
-                  className="mb-2"
-                />
-                <Form.Check 
-                  type="checkbox" 
-                  id="wd-website-url" 
-                  label="Website URL" 
-                  defaultChecked
-                  className="mb-2"
-                />
-                <Form.Check 
-                  type="checkbox" 
-                  id="wd-med-rec" 
-                  label="Media Recordings" 
-                  className="mb-2"
-                />
-                <Form.Check 
-                  type="checkbox" 
-                  id="wd-stud-ann" 
-                  label="Student Annotation" 
-                  className="mb-2"
-                />
-                <Form.Check 
-                  type="checkbox" 
-                  id="wd-file-up" 
-                  label="File Uploads" 
-                />
+                <Form.Check type="checkbox" id="wd-text-entry" label="Text Entry" className="mb-2" />
+                <Form.Check type="checkbox" id="wd-website-url" label="Website URL" defaultChecked className="mb-2" />
+                <Form.Check type="checkbox" id="wd-med-rec" label="Media Recordings" className="mb-2" />
+                <Form.Check type="checkbox" id="wd-stud-ann" label="Student Annotation" className="mb-2" />
+                <Form.Check type="checkbox" id="wd-file-up" label="File Uploads" />
               </Card.Body>
             </Card>
           </Col>
@@ -129,10 +100,10 @@ The Kambaz application should include a link to navigate back to the landing pag
 
                 <Form.Group className="mb-3">
                   <Form.Label className="fw-bold">Due</Form.Label>
-                  <Form.Control 
-                    type="text" 
-                    id="wd-due" 
-                    defaultValue="May 13, 2024, 11:59 PM"
+                  <Form.Control
+                    type="date"
+                    id="wd-due"
+                    defaultValue={assignment?.dueDate || ""}
                   />
                 </Form.Group>
 
@@ -140,20 +111,17 @@ The Kambaz application should include a link to navigate back to the landing pag
                   <Col>
                     <Form.Group>
                       <Form.Label className="fw-bold">Available from</Form.Label>
-                      <Form.Control 
-                        type="text" 
-                        id="wd-available-from" 
-                        defaultValue="May 6, 2024, 12:00 AM"
+                      <Form.Control
+                        type="date"
+                        id="wd-available-from"
+                        defaultValue={assignment?.availableDate || ""}
                       />
                     </Form.Group>
                   </Col>
                   <Col>
                     <Form.Group>
                       <Form.Label className="fw-bold">Until</Form.Label>
-                      <Form.Control 
-                        type="text" 
-                        id="wd-available-until"
-                      />
+                      <Form.Control type="date" id="wd-available-until" />
                     </Form.Group>
                   </Col>
                 </Row>
@@ -166,8 +134,12 @@ The Kambaz application should include a link to navigate back to the landing pag
 
         {/* Buttons */}
         <div className="d-flex justify-content-end gap-2">
-          <Button variant="secondary">Cancel</Button>
-          <Button variant="danger">Save</Button>
+          <Link href={`/courses/${cid}/assignments`}>
+            <Button variant="secondary">Cancel</Button>
+          </Link>
+          <Link href={`/courses/${cid}/assignments`}>
+            <Button variant="danger">Save</Button>
+          </Link>
         </div>
       </Form>
     </div>

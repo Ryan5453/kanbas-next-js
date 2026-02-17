@@ -1,0 +1,83 @@
+[
+    {
+        "_id": "A101",
+        "title": "Propulsion Assignment",
+        "course": "RS101",
+        "description": "Analyze the basic principles of rocket propulsion and provide a detailed report on the different types of rocket engines and their applications.",
+        "points": 100,
+        "dueDate": "2023-10-15",
+        "availableDate": "2023-10-01"
+    },
+    {
+        "_id": "A102",
+        "title": "Combustion Analysis",
+        "course": "RS101",
+        "description": "Submit a detailed analysis of combustion processes in rocket engines, including fuel types, efficiency calculations, and combustion instability factors.",
+        "points": 100,
+        "dueDate": "2023-10-22",
+        "availableDate": "2023-10-08"
+    },
+    {
+        "_id": "A103",
+        "title": "Nozzle Design Project",
+        "course": "RS101",
+        "description": "Design a rocket nozzle optimized for a given set of mission parameters. Include CAD drawings and performance analysis.",
+        "points": 150,
+        "dueDate": "2023-10-29",
+        "availableDate": "2023-10-15"
+    },
+    {
+        "_id": "A201",
+        "title": "Aerodynamics Quiz",
+        "course": "RS102",
+        "description": "Complete the aerodynamics quiz covering fundamental concepts of fluid dynamics, Bernoulli's principle, and airflow behavior.",
+        "points": 50,
+        "dueDate": "2023-10-18",
+        "availableDate": "2023-10-04"
+    },
+    {
+        "_id": "A202",
+        "title": "Flow Analysis",
+        "course": "RS102",
+        "description": "Perform a detailed flow analysis comparing subsonic and supersonic flow characteristics using the provided wind tunnel data.",
+        "points": 100,
+        "dueDate": "2023-10-25",
+        "availableDate": "2023-10-11"
+    },
+    {
+        "_id": "A203",
+        "title": "Heating Analysis",
+        "course": "RS102",
+        "description": "Analyze aerodynamic heating during atmospheric reentry and propose a thermal protection system for a given spacecraft configuration.",
+        "points": 100,
+        "dueDate": "2023-11-01",
+        "availableDate": "2023-10-18"
+    },
+    {
+        "_id": "A301",
+        "title": "Structural Design Task",
+        "course": "RS103",
+        "description": "Design a spacecraft structural component using appropriate materials. Include stress analysis and a justification for material selection.",
+        "points": 100,
+        "dueDate": "2023-10-20",
+        "availableDate": "2023-10-06"
+    },
+    {
+        "_id": "A302",
+        "title": "Orbital Calculations",
+        "course": "RS103",
+        "description": "Calculate orbital transfer parameters for a mission from low Earth orbit to geostationary orbit. Include delta-v budgets and transfer times.",
+        "points": 100,
+        "dueDate": "2023-10-27",
+        "availableDate": "2023-10-13"
+    },
+    {
+        "_id": "A303",
+        "title": "Systems Engineering Exam",
+        "course": "RS103",
+        "description": "Comprehensive exam covering spacecraft systems engineering, including power systems, communication subsystems, and thermal control.",
+        "points": 150,
+        "dueDate": "2023-11-03",
+        "availableDate": "2023-10-20"
+    }
+]
